@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Marketplace from './pages/Marketplace';
+import ProductPreview from './pages/ProductPreview';
+import ChatInterface from './pages/ChatInterface';
+import UserProfile from './pages/UserProfile';
+import Map from './components/Map';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      
+      <Routes>
+        <Route path="/" element={<Marketplace />} />
+        <Route path="/product/:id" element={<ProductPreview />} />
+        <Route path="/map/:id" element={<Map />} />
+        <Route path="/chat/:id" element={<ChatInterface />} />
+        <Route path="/profile" element={<UserProfile />} />
+      </Routes>
+      
+    </Router>
   );
 }
 
