@@ -4,7 +4,7 @@ import { Box, Typography, Button, IconButton } from "@mui/material";
 import ChatIcon from "@mui/icons-material/Chat";
 import CloseIcon from "@mui/icons-material/Close";
 
-// Array of messages for the Helpful Bot
+
 const messages = [
   "Welcome to our marketplace! How can I assist you today?",
   "Click on 'Go to User Profile' to manage the Profile and Product Listings",
@@ -17,12 +17,12 @@ const HelpfulBot: React.FC = () => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Function to handle message cycling
+  
   const handleNextMessage = () => {
     setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
   };
 
-  // Function to toggle the bot interface
+  
   const toggleBot = () => {
     setIsOpen(!isOpen);
   };
