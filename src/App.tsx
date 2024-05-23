@@ -5,6 +5,7 @@ import ProductPreview from './pages/ProductPreview';
 import ChatInterface from './pages/ChatInterface';
 import UserProfile from './pages/UserProfile';
 import Map from './components/Map';
+import Inventory from './pages/Inventory';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Marketplace />} />
         <Route path="/product/:id" element={<ProductPreview />} />
         <Route path="/map/:id" element={<Map />} />
+        <Route path="/inventory" element={<Inventory />} />
         <Route path="/chat/:id" element={<ChatInterface />} />
         <Route path="/profile" element={<UserProfile />} />
       </Routes>

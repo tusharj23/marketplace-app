@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Container, Grid, Paper, Typography } from '@mui/material';
+import { Container, Grid, Paper, Button } from '@mui/material';
 import { styled } from '@mui/system';
+import { useNavigate } from 'react-router-dom';
 import ProfileCard from '../components/ProfileCard';
 import ManageListings from '../components/ManageListings';
 import EditProfile from '../components/EditProfile';
@@ -52,6 +53,7 @@ const initialProfile: Profile = {
 
 const UserProfile: React.FC = () => {
   const [profile, setProfile] = useState<Profile>(initialProfile);
+  const navigate = useNavigate();
 
   const handleProfileUpdate = (updatedProfile: Profile) => {
     setProfile(updatedProfile);
@@ -124,6 +126,14 @@ const UserProfile: React.FC = () => {
               onAddListing={handleAddListing}
             />
           </StyledPaper>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => navigate('/inventory')}
+            style={{ marginTop: '16px' }}
+          >
+            Go to Inventory
+          </Button>
         </Grid>
       </Grid>
       <HelpfulBot />
